@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 @Service
 public class InsuredPersonServiceImpl implements InsuredPersonService {
@@ -44,7 +45,6 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
 //                .orElseThrow().getInsuredPerson();
 //        i.setCh_fk(insuredPerson.getCh_fk());
 
-
         return insuredPersonRepo.save(insuredPerson);
     }
 
@@ -61,7 +61,24 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
 
     @Override
     public InsuredPerson update(UUID i_id, InsuredPersonRq rq) {
-        return null;
+       Optional<InsuredPerson> insuredPerson = insuredPersonRepo.findById(i_id);
+       Optional<Beneficiary> beneficiary = beneficiaryRepo.findById(rq.getB_fk());
+           if(insuredPerson.isPresent()){
+               InsuredPerson up = insuredPerson.get();
+               up.setI_name(rq.getI_name());
+               up.setIsChild(rq.getIsChild());
+               up.setI_dob(rq.getI_dob());
+               up.setI_email(rq.getI_email());
+               up.setI_gender(rq.getI_gender());
+               up.setI_phone(rq.getI_phone());
+               up.setI_passport_issue_date(rq.getI_passport_issue_date());
+               up.setI_passport_name(rq.getI_passport_name());
+               up.setI_person_address(rq.getI_person_address());
+               up.setR_person_address(rq.getR_person_address());
+               up.setBeneficiary(beneficiary.get());
+
+               return up;
+           }return null;
     }
 
     @Override

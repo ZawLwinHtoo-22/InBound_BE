@@ -34,8 +34,6 @@ public class InsuredPerson {
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
     private Boolean isChild = false;
-//    @Contract(isChild = true)
-//    private UUID ch_fk;
 
 //    private UUID ch_fk;
 //    private UUID b_fk;

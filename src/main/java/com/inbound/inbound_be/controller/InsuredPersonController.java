@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -27,5 +28,23 @@ public class InsuredPersonController {
     public ResponseEntity<List<InsuredPerson>> showAll(){
         List<InsuredPerson> insuredPersonList = service.showAll();
         return new ResponseEntity<>(insuredPersonList, HttpStatus.OK);
+    }
+
+    @GetMapping("/{i_id}")
+    public ResponseEntity<InsuredPerson> showWithId(@PathVariable UUID i_id){
+        InsuredPerson insuredPerson = service.showWithId(i_id);
+        return new ResponseEntity<>(insuredPerson, HttpStatus.OK);
+    }
+
+    @PutMapping("/{i_id}")
+    public ResponseEntity<InsuredPerson> updateInsuredPerson(@PathVariable UUID i_id, @RequestBody InsuredPersonRq rq){
+        InsuredPerson insuredPerson = service.update(i_id, rq);
+        return new ResponseEntity<>(insuredPerson, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{i_id}")
+    public ResponseEntity<String> delete(@PathVariable UUID i_id){
+        service.delete(i_id);
+        return new ResponseEntity<>("Successfully Deleted", HttpStatus.OK);
     }
 }
