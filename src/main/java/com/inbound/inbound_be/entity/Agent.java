@@ -1,9 +1,7 @@
 package com.inbound.inbound_be.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.inbound.inbound_be.dto.AgentRequest;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,9 +14,19 @@ public class Agent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID agent_id;
+    private UUID a_id;
     private String a_name;
-    private Integer a_password;
-    private Integer a_licenseNo;
+    private Integer licenseNo;
+    private Integer password;
+    public static Agent of(AgentRequest request){
+        Agent agent = new Agent();
+        agent.a_name = request.getA_name();
+        agent.licenseNo = request.getLicenseNo();
+        agent.password = request.getPassword();
+
+
+        return agent;
+    }
+
 
 }

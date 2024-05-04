@@ -1,8 +1,7 @@
 package com.inbound.inbound_be.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,6 +9,9 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class InsuredPerson {
 
     @Id
@@ -22,7 +24,7 @@ public class InsuredPerson {
 
     private UUID i_person_id;
     private String i_name;
-    private LocalDateTime i_dob;
+    private LocalDate i_dob;
     private String i_gender;
     private String i_phone;
     private String i_email;
@@ -31,9 +33,17 @@ public class InsuredPerson {
     private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
-
+    private Boolean isChild = false;
     private UUID ch_fk;
-    private UUID b_fk;
+//    @Contract(isChild = true)
+//    private UUID ch_fk;
+
+//    private UUID ch_fk;
+//    private UUID b_fk;
+
+    @OneToOne
+    @JoinColumn(name = "b_fk")
+    private Beneficiary beneficiary;
 
 
 

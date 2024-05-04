@@ -1,9 +1,7 @@
 package com.inbound.inbound_be.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.inbound.inbound_be.dto.ChildRequest;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,5 +22,20 @@ public class Child {
     private String ch_name;
     private LocalDate ch_dob;
     private String ch_gender;
+    private String ch_gu_Name;
+    private String ch_rs;
 
+    @OneToOne
+    @JoinColumn(name = "i_person_fk")
+    private InsuredPerson insuredPerson;
+    public static Child of(ChildRequest request){
+        Child child1 = new Child();
+        child1.setCh_name(request.getCh_name());
+        child1.setCh_dob(request.getCh_dob());
+        child1.setCh_gender(request.getCh_gender());
+        child1.setCh_gu_Name(request.getCh_gu_Name());
+        child1.setCh_rs(request.getCh_rs());
+
+        return child1;
+    }
 }

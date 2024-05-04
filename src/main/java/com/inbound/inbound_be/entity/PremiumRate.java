@@ -24,7 +24,7 @@ public class PremiumRate {
     private Integer fromAge;
     private Integer toAge;
     private Double pre_rate;
-    private String ch_gu_Name;
+
     private UUID c_id_fk;
     private UUID i_id_fk;
 
