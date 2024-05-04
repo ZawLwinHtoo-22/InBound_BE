@@ -21,8 +21,8 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
     private ModelMapper mapper;
     @Override
     public Beneficiary addBeneficiary(BeneficiaryRq rq) {
-        Beneficiary beneficiary = Beneficiary.of(rq);
-        return mapper.map(repo.save(beneficiary), Beneficiary.class);
+        Beneficiary beneficiary = mapper.map(rq, Beneficiary.class);
+        return repo.save(beneficiary);
     }
 
     @Override

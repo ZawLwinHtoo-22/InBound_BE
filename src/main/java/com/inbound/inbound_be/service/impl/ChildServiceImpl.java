@@ -37,6 +37,11 @@ public class ChildServiceImpl implements ChildService {
     @Override
     public List<Child> showAll() {
         List<Child> childList = childRepo.findAll();
+
+            if(childList.isEmpty()){
+                System.out.println("No data");
+            }
+
         return childList;
     }
 

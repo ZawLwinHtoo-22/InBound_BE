@@ -31,21 +31,21 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
 
     @Override
     public InsuredPerson addInsuredPerson(InsuredPersonRq rq) {
-        InsuredPerson i = InsuredPersonRq.of(rq);
+        InsuredPerson insuredPerson = mapper.map(rq, InsuredPerson.class);
         Beneficiary beneficiary = beneficiaryRepo.findById(rq.getB_fk())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid BeneficiaryId "+ rq.getB_fk()));
-        i.setBeneficiary(beneficiary);
+        insuredPerson.setBeneficiary(beneficiary);
 
 //        if(rq.getIsChild() == true){
 //
 //            Child child = childRepo.findById();
 //        }
-        InsuredPerson insuredPerson = insuredPersonRepo.findForeignKeyWhenBooleanColumnIsTrue()
-                .orElseThrow().getInsuredPerson();
-        i.setCh_fk(insuredPerson.getCh_fk());
+//        InsuredPerson insuredPerson = insuredPersonRepo.findForeignKeyWhenBooleanColumnIsTrue()
+//                .orElseThrow().getInsuredPerson();
+//        i.setCh_fk(insuredPerson.getCh_fk());
 
 
-        return mapper.map(insuredPersonRepo.save(i), InsuredPerson.class);
+        return insuredPersonRepo.save(insuredPerson);
     }
 
     @Override

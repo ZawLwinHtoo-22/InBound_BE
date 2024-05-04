@@ -24,22 +24,8 @@ public class InsuredPersonRq {
     private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
-    private UUID b_fk;
     private Boolean isChild = false;
+    private UUID b_fk;
 
-    public static InsuredPerson of(InsuredPersonRq rq){
-        return new InsuredPerson()
-                .builder()
-                .i_name(rq.getI_name())
-                .i_dob(rq.getI_dob())
-                .i_gender(rq.getI_gender())
-                .i_phone(rq.getI_phone())
-                .i_email(rq.getI_email())
-                .i_person_address(rq.getI_person_address())
-                .r_person_address(rq.getR_person_address())
-                .r_country(rq.getR_country())
-                .i_passport_name(rq.getI_passport_name())
-                .i_passport_issue_date(rq.getI_passport_issue_date())
-                .build();
-    }
+
 }

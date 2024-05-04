@@ -31,18 +31,5 @@ public class Beneficiary {
     private String b_address;
     private String b_country;
 
-    public static Beneficiary of(BeneficiaryRq request){
-        Beneficiary beneficiary = new Beneficiary();
-        beneficiary.b_name = request.getB_name();
-        beneficiary.b_date = request.getB_date();
-        beneficiary.b_nrc = request.getB_nrc();
-        beneficiary.b_rs = request.getB_rs();
-        beneficiary.b_ph = request.getB_ph();
-        beneficiary.b_email = request.getB_email();
-        beneficiary.b_address = request.getB_address();
-        beneficiary.b_country = request.getB_country();
-
-        return beneficiary;
-    }
 
 }
