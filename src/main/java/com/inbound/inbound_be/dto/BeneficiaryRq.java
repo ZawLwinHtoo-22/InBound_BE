@@ -18,5 +18,5 @@ public class BeneficiaryRq {
     private String b_ph;
     private String b_email;
     private String b_address;
-    private String b_country;
+    private String r_country;
 }

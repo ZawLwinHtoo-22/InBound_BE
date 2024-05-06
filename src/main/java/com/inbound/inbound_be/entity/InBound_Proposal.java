@@ -40,6 +40,13 @@ public class InBound_Proposal {
     private UUID i_id_fk;
     private UUID a_id_fk;
 
+    @ManyToOne
+    private Agent agent;
 
+    @ManyToOne
+    private PremiumRate rate;
+
+    @ManyToOne
+    private InsuredPerson insuredPerson;
 
 }

@@ -26,6 +26,7 @@ public class InsuredPersonRq {
     private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
+    private String i_passport_issue_country;
     private Boolean isChild = false;
     private UUID b_fk;
 

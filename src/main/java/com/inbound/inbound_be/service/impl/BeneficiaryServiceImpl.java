@@ -2,7 +2,9 @@ package com.inbound.inbound_be.service.impl;
 
 import com.inbound.inbound_be.dto.BeneficiaryRq;
 import com.inbound.inbound_be.entity.Beneficiary;
+import com.inbound.inbound_be.entity.Country;
 import com.inbound.inbound_be.repo.BeneficiaryRepo;
+import com.inbound.inbound_be.repo.CountryRepo;
 import com.inbound.inbound_be.service.BeneficiaryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,14 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
     private BeneficiaryRepo repo;
     @Autowired
     private ModelMapper mapper;
+    @Autowired
+    private CountryRepo countryRepo;
     @Override
     public Beneficiary addBeneficiary(BeneficiaryRq rq) {
         Beneficiary beneficiary = mapper.map(rq, Beneficiary.class);
+//        Country country = countryRepo.findCountriesByCountry_name(rq.getB_country())
+//                .orElseThrow(() -> new IllegalArgumentException("No Country"));
+//        beneficiary.setB_country(country.getCountry_name());
         return repo.save(beneficiary);
     }
 
@@ -48,7 +55,7 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
             upB.setB_rs(rq.getB_rs());
             upB.setB_ph(rq.getB_ph());
             upB.setB_email(rq.getB_email());
-            upB.setB_country(rq.getB_country());
+            upB.setR_country(rq.getR_country());
             return upB;
         }return null;
     }

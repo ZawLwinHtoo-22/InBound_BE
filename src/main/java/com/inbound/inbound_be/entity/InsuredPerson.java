@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 @Entity
 @Getter
@@ -33,6 +34,7 @@ public class InsuredPerson {
     private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
+    private String i_passport_issue_country;
     private Boolean isChild = false;
 
 //    private UUID ch_fk;
@@ -42,6 +44,8 @@ public class InsuredPerson {
     @JoinColumn(name = "b_fk")
     private Beneficiary beneficiary;
 
+//    @OneToOne
+//    private Country country;
 
 
 }
