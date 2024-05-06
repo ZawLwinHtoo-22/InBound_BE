@@ -61,12 +61,12 @@ public class AgentServiceImpl implements AgentService {
     }
 
     @Override
-    public AgentInfo validateAgent(AgentValidateRq validateRq) {
+    public Agent validateAgent(AgentValidateRq validateRq) {
         final Agent agent = repo
                 .findAgentByLicenseNoAndPassword(validateRq.getLicenseNo(), validateRq.getPassword())
                 .orElseThrow( () -> new RuntimeException("No Agent"));
 
-        return AgentInfo.of(agent);
+        return agent;
 
     }
 }

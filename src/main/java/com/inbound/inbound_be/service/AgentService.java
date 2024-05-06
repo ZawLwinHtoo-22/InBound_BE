@@ -18,6 +18,6 @@ public interface AgentService {
 
     Agent update(UUID a_id, AgentRequest request);
     void delete(UUID a_id);
-    AgentInfo validateAgent(AgentValidateRq validateRq);
+    Agent validateAgent(AgentValidateRq validateRq);
 
 }

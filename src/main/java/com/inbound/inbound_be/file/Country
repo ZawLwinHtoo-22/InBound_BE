@@ -1,0 +1,226 @@
+[
+    {
+        "country_name": "Afghanistan",
+        "country_code": "(+93) Afghanistan"
+    },
+    {
+        "country_name": "Albania",
+        "country_code": "(+355) Albania"
+    },
+    {
+        "country_name": "Algeria",
+        "country_code": "(+213) Algeria"
+    },
+    {
+        "country_name": "Andorra",
+        "country_code": "(+376) Andorra"
+    },
+    {
+        "country_name": "Angola",
+        "country_code": "(+244) Angola"
+    },
+    {
+        "country_name": "Antarctica",
+        "country_code": "(+672) Antarctica"
+    },
+    {
+        "country_name": "Argentina",
+        "country_code": "(+54) Argentina"
+    },
+    {
+        "country_name": "Armenia",
+        "country_code": "(+374) Armenia"
+    },
+    {
+        "country_name": "Aruba",
+        "country_code": "(+297) Aruba"
+    },
+    {
+        "country_name": "Australia",
+        "country_code": "(+61) Australia"
+    },
+    {
+        "country_name": "Austria",
+        "country_code": "(+43) Austria"
+    },
+    {
+        "country_name": "Azerbaijan",
+        "country_code": "(+994) Azerbaijan"
+    },
+    {
+        "country_name": "Bahrain",
+        "country_code": "(+973) Bahrain"
+    },
+    {
+        "country_name": "Bangladesh",
+        "country_code": "(+880) Bangladesh"
+    },
+    {
+        "country_name": "Belarus",
+        "country_code": "(+375) Belarus"
+    },
+    {
+        "country_name": "Belgium",
+        "country_code": "(+32) Belgium"
+    },
+    {
+        "country_name": "Belize",
+        "country_code": "(+501) Belize"
+    },
+    {
+        "country_name": "Benin",
+        "country_code": "(+229) Benin"
+    },
+    {
+        "country_name": "Bhutan",
+        "country_code": "(+975) Bhutan"
+    },
+    {
+        "country_name": "Bolivia",
+        "country_code": "(+591) Bolivia"
+    },
+    {
+        "country_name": "Bosnia and Herzegovina",
+        "country_code": "(+387) Bosnia and Herzegovina"
+    },
+    {
+        "country_name": "Botswana",
+        "country_code": "(+267) Botswana"
+    },
+    {
+        "country_name": "Brazil",
+        "country_code": "(+55) Brazil"
+    },
+    {
+        "country_name": "British Indian Ocean Territory",
+        "country_code": "(+246) British Indian Ocean Territory"
+    },
+    {
+        "country_name": "Brunei Darussalam",
+        "country_code": "(+673) Brunei Darussalam"
+    },
+    {
+        "country_name": "Bulgaria",
+        "country_code": "(+359) Bulgaria"
+    },
+    {
+        "country_name": "Burkina Faso",
+        "country_code": "(+226) Burkina Faso"
+    },
+    {
+        "country_name": "Burundi",
+        "country_code": "(+257) Burundi"
+    },
+    {
+        "country_name": "Cambodia",
+        "country_code": "(+855) Cambodia"
+    },
+    {
+        "country_name": "Cameroon",
+        "country_code": "(+237) Cameroon"
+    },
+    {
+        "country_name": "Canada",
+        "country_code": "(+1) Canada"
+    },
+    {
+        "country_name": "Cape Verde",
+        "country_code": "(+238) Cape Verde"
+    },
+    {
+        "country_name": "Central African Republic",
+        "country_code": "(+236) Central African Republic"
+    },
+    {
+        "country_name": "Chad",
+        "country_code": "(+235) Chad"
+    },
+    {
+        "country_name": "Chile",
+        "country_code": "(+56) Chile"
+    },
+    {
+        "country_name": "China",
+        "country_code": "(+86) China"
+    },
+    {
+        "country_name": "Christmas Island",
+        "country_code": "(+61) Christmas Island"
+    },
+    {
+        "country_name": "Cocos (Keeling) Islands",
+        "country_code": "(+61) Cocos (Keeling) Islands"
+    },
+    {
+        "country_name": "Colombia",
+        "country_code": "(+57) Colombia"
+    },
+    {
+        "country_name": "Comoros",
+        "country_code": "(+269) Comoros"
+    },
+    {
+        "country_name": "Congo",
+        "country_code": "(+243) Congo"
+    },
+    {
+        "country_name": "Congo, The Democratic Republic of the",
+        "country_code": "(+242) Congo, The Democratic Republic of the"
+    },
+    {
+        "country_name": "Cook Islands",
+        "country_code": "(+682) Cook Islands"
+    },
+    {
+        "country_name": "Costa Rica",
+        "country_code": "(+506) Costa Rica"
+    },
+    {
+        "country_name": "Croatia",
+        "country_code": "(+385) Croatia"
+    },
+    {
+        "country_name": "Cuba",
+        "country_code": "(+53) Cuba"
+    },
+    {
+        "country_name": "Cyprus",
+        "country_code": "(+357) Cyprus"
+    },
+    {
+        "country_name": "Czech Republic",
+        "country_code": "(+420) Czech Republic"
+    },
+    {
+        "country_name": "Denmark",
+        "country_code": "(+45) Denmark"
+    },
+    {
+        "country_name": "Djibouti",
+        "country_code": "(+253) Djibouti"
+    },
+    {
+        "country_name": "East Timor",
+        "country_code": "(+670) East Timor"
+    },
+    {
+        "country_name": "Ecuador",
+        "country_code": "(+593) Ecuador"
+    },
+    {
+        "country_name": "Egypt",
+        "country_code": "(+20) Egypt"
+    },
+    {
+        "country_name": "El Salvador",
+        "country_code": "(+503) El Salvador"
+    },
+    {
+        "country_name": "Equatorial Guinea",
+        "country_code": "(+240) Equatorial Guinea"
+    },
+    {
+        "country_name": "Eritrea",
+        "country_code": "(+291) Eritrea"
+    }
+]

@@ -2,6 +2,7 @@ package com.inbound.inbound_be.dto;
 
 import com.inbound.inbound_be.entity.InsuredPerson;
 import com.inbound.inbound_be.repo.InsuredPersonRepo;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class InsuredPersonRq {
 
     private String i_name;

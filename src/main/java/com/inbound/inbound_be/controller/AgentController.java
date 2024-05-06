@@ -51,7 +51,7 @@ public class AgentController {
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<AgentInfo> validateAgent(@RequestBody AgentValidateRq validateRq){
+    public ResponseEntity<Agent> validateAgent(@RequestBody AgentValidateRq validateRq){
         return ResponseEntity.ok(service.validateAgent(validateRq));
     }
 
