@@ -1,5 +1,6 @@
 package com.inbound.inbound_be.controller;
 
+import com.inbound.inbound_be.domain.HtooResponse;
 import com.inbound.inbound_be.dto.CountryRequest;
 import com.inbound.inbound_be.entity.Country;
 import com.inbound.inbound_be.service.CountryService;
@@ -20,15 +21,19 @@ public class CountryController {
     private CountryService service;
 
     @PostMapping
-    public ResponseEntity<List<Country>> addCountries(@RequestBody List<CountryRequest> requests){
+    public ResponseEntity<HtooResponse<List<Country>>> addCountries(@RequestBody List<CountryRequest> requests){
         List<Country> addedCountries = service.addCountry(requests);
-        return new ResponseEntity<>(addedCountries, HttpStatus.CREATED);
+        HtooResponse<List<Country>> response =
+                new HtooResponse<>(addedCountries, "Country List", HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping
-    public ResponseEntity<List<Country>> showAll(){
+    public ResponseEntity<HtooResponse<List<Country>>> showAll(){
         List<Country> show = service.showAll();
-        return new ResponseEntity<>(show, HttpStatus.OK);
+        HtooResponse<List<Country>> response =
+                new HtooResponse<>(show, "Show List", HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/{co_id}")

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -18,5 +19,5 @@ public class BeneficiaryRq {
     private String b_ph;
     private String b_email;
     private String b_address;
-    private String r_country;
+    private UUID r_country;
 }

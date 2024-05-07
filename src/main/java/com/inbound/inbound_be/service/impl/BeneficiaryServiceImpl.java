@@ -26,9 +26,9 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
     @Override
     public Beneficiary addBeneficiary(BeneficiaryRq rq) {
         Beneficiary beneficiary = mapper.map(rq, Beneficiary.class);
-//        Country country = countryRepo.findCountriesByCountry_name(rq.getB_country())
-//                .orElseThrow(() -> new IllegalArgumentException("No Country"));
-//        beneficiary.setB_country(country.getCountry_name());
+        Country country = countryRepo.findById(rq.getR_country())
+                .orElseThrow(() -> new IllegalArgumentException("No Country"));
+        beneficiary.setCountry(country);
         return repo.save(beneficiary);
     }
 
@@ -47,6 +47,8 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
     @Override
     public Beneficiary updateBeneficiary(UUID b_id, BeneficiaryRq rq) {
         Optional<Beneficiary> oldB = repo.findById(b_id);
+        Country country = countryRepo.findById(rq.getR_country())
+                .orElseThrow(() -> new IllegalArgumentException("No Country"));
         if(oldB.isPresent()){
             Beneficiary upB = oldB.get();
             upB.setB_name(rq.getB_name());
@@ -55,7 +57,7 @@ public class BeneficiaryServiceImpl implements BeneficiaryService {
             upB.setB_rs(rq.getB_rs());
             upB.setB_ph(rq.getB_ph());
             upB.setB_email(rq.getB_email());
-            upB.setR_country(rq.getR_country());
+            upB.setCountry(country);
             return upB;
         }return null;
     }

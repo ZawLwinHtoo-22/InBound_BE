@@ -26,10 +26,10 @@ public class Beneficiary {
     private String b_ph;
     private String b_email;
     private String b_address;
-    private String r_country;
 
-//    @OneToOne
-//    private Country country;
+    @ManyToOne
+    @JoinColumn(name = "r_country")
+    private Country country;
 
 
 }

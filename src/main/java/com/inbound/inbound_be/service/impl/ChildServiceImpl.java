@@ -29,8 +29,6 @@ public class ChildServiceImpl implements ChildService {
     @Override
     public Child addChild(ChildRequest request) {
         Child child = mapper.map(request, Child.class);
-        InsuredPerson insuredPerson = repo.findById(request.getI_id()).get();
-        child.setInsuredPerson(insuredPerson);
         return childRepo.save(child);
     }
 
@@ -63,7 +61,6 @@ public class ChildServiceImpl implements ChildService {
             upChild.setCh_rs(request.getCh_rs());
             upChild.setCh_dob(request.getCh_dob());
             upChild.setCh_gender(request.getCh_gender());
-
             return upChild;
         }
             return null;

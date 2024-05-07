@@ -26,7 +26,5 @@ public class Child {
     private String ch_gu_Name;
     private String ch_rs;
 
-    @ManyToOne
-    private InsuredPerson insuredPerson;
 
 }

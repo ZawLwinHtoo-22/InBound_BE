@@ -23,12 +23,12 @@ public class InsuredPersonRq {
     private String i_email;
     private String i_person_address;
     private String r_person_address;
-    private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
     private String i_passport_issue_country;
-    private Boolean isChild = false;
+    private Boolean isChild;
     private UUID b_fk;
+    private UUID r_country;
 
 
 }

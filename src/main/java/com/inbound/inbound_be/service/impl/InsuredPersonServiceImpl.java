@@ -3,9 +3,11 @@ package com.inbound.inbound_be.service.impl;
 import com.inbound.inbound_be.dto.InsuredPersonRq;
 import com.inbound.inbound_be.entity.Beneficiary;
 import com.inbound.inbound_be.entity.Child;
+import com.inbound.inbound_be.entity.Country;
 import com.inbound.inbound_be.entity.InsuredPerson;
 import com.inbound.inbound_be.repo.BeneficiaryRepo;
 import com.inbound.inbound_be.repo.ChildRepo;
+import com.inbound.inbound_be.repo.CountryRepo;
 import com.inbound.inbound_be.repo.InsuredPersonRepo;
 import com.inbound.inbound_be.service.InsuredPersonService;
 import org.modelmapper.ModelMapper;
@@ -22,7 +24,7 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
     private InsuredPersonRepo insuredPersonRepo;
 
     @Autowired
-    private ChildRepo childRepo;
+    private CountryRepo countryRepo;
 
     @Autowired
     private BeneficiaryRepo beneficiaryRepo;
@@ -36,14 +38,9 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
         Beneficiary beneficiary = beneficiaryRepo.findById(rq.getB_fk())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid BeneficiaryId "+ rq.getB_fk()));
         insuredPerson.setBeneficiary(beneficiary);
-
-//        if(rq.getIsChild() == true){
-//
-//            Child child = childRepo.findById();
-//        }
-//        InsuredPerson insuredPerson = insuredPersonRepo.findForeignKeyWhenBooleanColumnIsTrue()
-//                .orElseThrow().getInsuredPerson();
-//        i.setCh_fk(insuredPerson.getCh_fk());
+        Country country = countryRepo.findById(rq.getR_country())
+                .orElseThrow(() -> new IllegalArgumentException("NO Country"));
+        insuredPerson.setCountry(country);
 
         return insuredPersonRepo.save(insuredPerson);
     }
@@ -63,6 +60,8 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
     public InsuredPerson update(UUID i_id, InsuredPersonRq rq) {
        Optional<InsuredPerson> insuredPerson = insuredPersonRepo.findById(i_id);
        Optional<Beneficiary> beneficiary = beneficiaryRepo.findById(rq.getB_fk());
+       Country country = countryRepo.findById(rq.getR_country())
+               .orElseThrow(() -> new IllegalArgumentException("No Country"));
            if(insuredPerson.isPresent()){
                InsuredPerson up = insuredPerson.get();
                up.setI_name(rq.getI_name());
@@ -76,6 +75,7 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
                up.setI_person_address(rq.getI_person_address());
                up.setR_person_address(rq.getR_person_address());
                up.setBeneficiary(beneficiary.get());
+               up.setCountry(country);
 
                return up;
            }return null;
