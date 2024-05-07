@@ -44,9 +44,9 @@ public class InsuredPerson {
     @JoinColumn(name = "b_fk")
     private Beneficiary beneficiary;
 
-    @OneToMany
-    @JoinColumn(name = "ch_fk")
-    private List<Child> child = new ArrayList<>();
+//    @OneToMany
+//    @JoinColumn(name = "ch_fk")
+//    private List<Child> child = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "r_country")

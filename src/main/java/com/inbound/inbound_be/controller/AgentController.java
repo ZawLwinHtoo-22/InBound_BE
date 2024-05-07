@@ -1,5 +1,6 @@
 package com.inbound.inbound_be.controller;
 
+import com.inbound.inbound_be.domain.HtooResponse;
 import com.inbound.inbound_be.dto.AgentInfo;
 import com.inbound.inbound_be.dto.AgentRequest;
 import com.inbound.inbound_be.dto.AgentValidateRq;
@@ -22,20 +23,27 @@ public class AgentController {
     private AgentService service;
 
     @PostMapping
-    public ResponseEntity<Agent> addAgent(@RequestBody AgentRequest request){
+    public ResponseEntity<HtooResponse<Agent>> addAgent(@RequestBody AgentRequest request){
        Agent agent = service.addAgent(request);
-        return new ResponseEntity<>(agent, HttpStatus.CREATED);
+        HtooResponse<Agent> response =
+                new HtooResponse<>(agent, "Add Agent", HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<List<Agent>> showAll(){
+    public ResponseEntity<HtooResponse<List<Agent>>> showAll(){
         List<Agent> agents = service.showAll();
-        return new ResponseEntity<>(agents, HttpStatus.OK);
+        HtooResponse<List<Agent>> response =
+                new HtooResponse<>(agents,"Agent List", HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @GetMapping("/{a_id}")
-    public ResponseEntity<Agent> showWithId(@PathVariable UUID a_id){
+    public ResponseEntity<HtooResponse<Agent>> showWithId(@PathVariable UUID a_id){
         Agent agent = service.showWithId(a_id);
-        return new ResponseEntity<>(agent, HttpStatus.OK);
+        HtooResponse<Agent> response =
+                new HtooResponse<>(agent, "Show With AgentId", HttpStatus.OK);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping("/{a_id}")
@@ -51,8 +59,11 @@ public class AgentController {
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<Agent> validateAgent(@RequestBody AgentValidateRq validateRq){
-        return ResponseEntity.ok(service.validateAgent(validateRq));
+    public ResponseEntity<HtooResponse<Agent>> validateAgent(@RequestBody AgentValidateRq validateRq){
+        Agent agent = service.validateAgent(validateRq);
+        HtooResponse<Agent> response =
+                new HtooResponse<>(agent,"True", HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 

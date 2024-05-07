@@ -18,4 +18,5 @@ public class ChildRequest {
     private String ch_gender;
     private String ch_gu_Name;
     private String ch_rs;
+    private UUID i_person_fk;
 }

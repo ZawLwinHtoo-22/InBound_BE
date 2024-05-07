@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface InsuredPersonRepo extends JpaRepository<InsuredPerson, UUID> {
-
 //    @Query("SELECT b.ch_id FROM InsuredPerson a JOIN Child b ON a.isChild = true AND a.ch_fk = b.ch_id")
 //    Optional<Child> findForeignKeyWhenBooleanColumnIsTrue();
 }

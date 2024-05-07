@@ -29,6 +29,8 @@ public class ChildServiceImpl implements ChildService {
     @Override
     public Child addChild(ChildRequest request) {
         Child child = mapper.map(request, Child.class);
+        InsuredPerson insuredPerson = repo.findById(request.getI_person_fk()).get();
+        child.setInsuredPerson(insuredPerson);
         return childRepo.save(child);
     }
 
@@ -54,6 +56,8 @@ public class ChildServiceImpl implements ChildService {
     @Override
     public Child update(UUID ch_id, ChildRequest request) {
         Optional<Child> child =  childRepo.findById(ch_id);
+        InsuredPerson insuredPerson = repo.findById(request.getI_person_fk())
+                .orElseThrow(() -> new IllegalArgumentException("No InsuredPerson"));
         if(child.isPresent()){
             Child upChild =  child.get();
             upChild.setCh_name(request.getCh_name());
@@ -61,6 +65,7 @@ public class ChildServiceImpl implements ChildService {
             upChild.setCh_rs(request.getCh_rs());
             upChild.setCh_dob(request.getCh_dob());
             upChild.setCh_gender(request.getCh_gender());
+            upChild.setInsuredPerson(insuredPerson);
             return upChild;
         }
             return null;
