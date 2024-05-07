@@ -37,9 +37,15 @@ public class InBound_Proposal {
     private String co_plan;
     private Double pre_rate;
 
-    private UUID i_id_fk;
-    private UUID a_id_fk;
+//    private UUID i_id_fk;
+//    private UUID a_id_fk;
 
+    @ManyToOne
+    @JoinColumn(name = "i_id_fk")
+    private InsuredPerson insuredPerson;
 
+    @ManyToOne
+    @JoinColumn(name = "a_id_fk")
+    private Agent agent;
 
 }
