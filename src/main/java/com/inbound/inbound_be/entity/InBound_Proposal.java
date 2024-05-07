@@ -7,9 +7,9 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Entity
 @Getter
 @Setter
-@Entity
 
 public class InBound_Proposal {
 
@@ -34,7 +34,7 @@ public class InBound_Proposal {
     private LocalDate p_st_date;
     private LocalDate p_en_date;
     private LocalDate pro_date;
-    private String co_plan;
+    private Integer co_plan;
     private Double pre_rate;
 
 //    private UUID i_id_fk;

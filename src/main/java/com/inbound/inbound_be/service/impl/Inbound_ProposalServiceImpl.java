@@ -16,6 +16,7 @@ public class Inbound_ProposalServiceImpl implements Inbound_ProposalService {
     private ModelMapper mapper;
     @Override
     public InBound_Proposal createProposal(Inbound_ProposalRequest request) {
-        return null;
+        InBound_Proposal inBoundProposal=mapper.map(request, InBound_Proposal.class);
+        return inBoundProposal;
     }
 }

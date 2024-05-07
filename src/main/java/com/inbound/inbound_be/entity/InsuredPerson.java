@@ -33,7 +33,7 @@ public class InsuredPerson {
     private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
-    private Boolean isChild = false;
+    private Boolean isChild;
 //    @Contract(isChild = true)
 //    private UUID ch_fk;
 
@@ -43,7 +43,6 @@ public class InsuredPerson {
     @OneToOne
     @JoinColumn(name = "b_fk")
     private Beneficiary beneficiary;
-
 
 
 }

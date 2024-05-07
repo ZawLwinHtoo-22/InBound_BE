@@ -25,8 +25,4 @@ public class Child {
     private String ch_gu_Name;
     private String ch_rs;
 
-    @OneToOne
-    @JoinColumn(name = "i_person_fk")
-    private InsuredPerson insuredPerson;
-
 }

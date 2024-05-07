@@ -1,6 +1,7 @@
 package com.inbound.inbound_be.service.impl;
 
 import com.inbound.inbound_be.dto.InsuredPersonRq;
+import com.inbound.inbound_be.dto.InsuredPersonRqWithoutChild;
 import com.inbound.inbound_be.entity.Beneficiary;
 import com.inbound.inbound_be.entity.Child;
 import com.inbound.inbound_be.entity.InsuredPerson;
@@ -35,8 +36,8 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
         Beneficiary beneficiary = beneficiaryRepo.findById(rq.getB_fk())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid BeneficiaryId "+ rq.getB_fk()));
         insuredPerson.setBeneficiary(beneficiary);
-
-//        if(rq.getIsChild() == true){
+        Child child=childRepo.getReferenceById(rq.getCh_fk());
+//        if(rq.getIsChild() == true)t{
 //
 //            Child child = childRepo.findById();
 //        }
@@ -45,6 +46,12 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
 //        i.setCh_fk(insuredPerson.getCh_fk());
 
 
+        return insuredPersonRepo.save(insuredPerson);
+    }
+
+    @Override
+    public InsuredPerson addWithoutChild(InsuredPersonRqWithoutChild rqWithoutChild) {
+        InsuredPerson insuredPerson=mapper.map(rqWithoutChild, InsuredPerson.class);
         return insuredPersonRepo.save(insuredPerson);
     }
 

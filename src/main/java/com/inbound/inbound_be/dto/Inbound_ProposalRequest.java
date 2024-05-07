@@ -12,7 +12,7 @@ public class Inbound_ProposalRequest {
     private String j_from;
     private String j_to;
     private LocalDate e_ar_date;
-    private String co_plan;
+    private Integer co_plan;
     private String i_name;
     private LocalDate i_dob;
     private String i_gender;
@@ -23,6 +23,8 @@ public class Inbound_ProposalRequest {
     private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
+    private Boolean isChild;
+    private UUID ch_fk;
     private UUID agent_id;
     private String ch_name;
     private LocalDate ch_dob;

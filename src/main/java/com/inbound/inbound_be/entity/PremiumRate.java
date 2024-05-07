@@ -20,7 +20,7 @@ public class PremiumRate {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID pre_id;
-    private LocalDate policyDays;
+    private Integer policyDays;
     private Integer fromAge;
     private Integer toAge;
     private Double pre_rate;

@@ -29,8 +29,6 @@ public class ChildServiceImpl implements ChildService {
     @Override
     public Child addChild(ChildRequest request) {
         Child child = mapper.map(request, Child.class);
-        InsuredPerson insuredPerson = repo.findById(request.getI_id()).get();
-        child.setInsuredPerson(insuredPerson);
         return childRepo.save(child);
     }
 
