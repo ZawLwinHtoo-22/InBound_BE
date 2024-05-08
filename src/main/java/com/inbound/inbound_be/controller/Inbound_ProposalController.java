@@ -84,9 +84,5 @@ public class Inbound_ProposalController {
         List<InBound_Proposal> inBoundProposal = inboundProposalService.validateRq(rq);
         return new ResponseEntity<>(inBoundProposal, HttpStatus.OK);
     }
-//@PostMapping("/validate")
-//public ResponseEntity<List<InBound_Proposal>> validate(@RequestParam String passportNumber,@RequestParam String passportCountry){
-//    List<InBound_Proposal> inBoundProposal = inboundProposalService.validateRq(passportNumber,passportCountry);
-//    return new ResponseEntity<>(inBoundProposal, HttpStatus.OK);
-//}
+
 }

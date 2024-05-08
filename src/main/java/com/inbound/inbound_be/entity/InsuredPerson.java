@@ -44,7 +44,6 @@ public class InsuredPerson {
     @JoinColumn(name = "b_fk")
     private Beneficiary beneficiary;
 
-
     @ManyToOne
     @JoinColumn(name = "r_country")
     private Country country;

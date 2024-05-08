@@ -35,13 +35,6 @@ public class Inbound_ProposalServiceImpl implements Inbound_ProposalService {
         return inBoundProposals;
     }
 
-//    @Override
-//    public List<InBound_Proposal> validateRq(InBound_ValidationRq rq) {
-//        InBound_Proposal inBoundProposal = inboundProposalRepo.
-//        return null;
-//    }
-
-
     @Override
     public List<InBound_Proposal> validateRq(InBound_ValidationRq validationRq) {
 //            InBound_Proposal inBoundProposal = inboundProposalRepo.

@@ -1,6 +1,5 @@
 package com.inbound.inbound_be.service.impl;
 
-import com.inbound.inbound_be.dto.AgentInfo;
 import com.inbound.inbound_be.dto.AgentRequest;
 import com.inbound.inbound_be.dto.AgentValidateRq;
 import com.inbound.inbound_be.entity.Agent;

@@ -1,7 +1,6 @@
 package com.inbound.inbound_be.controller;
 
 import com.inbound.inbound_be.domain.HtooResponse;
-import com.inbound.inbound_be.dto.AgentInfo;
 import com.inbound.inbound_be.dto.AgentRequest;
 import com.inbound.inbound_be.dto.AgentValidateRq;
 import com.inbound.inbound_be.entity.Agent;

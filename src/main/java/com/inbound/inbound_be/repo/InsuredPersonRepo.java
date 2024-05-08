@@ -11,7 +11,5 @@ import java.util.UUID;
 
 public interface InsuredPersonRepo extends JpaRepository<InsuredPerson, UUID> {
 
-    InsuredPerson findInsuredPersonByPassportNumberAndPassportCountry(String passportNumber, String passportCountry);
-
 
 }

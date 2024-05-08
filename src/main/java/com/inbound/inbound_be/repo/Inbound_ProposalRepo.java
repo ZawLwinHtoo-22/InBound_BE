@@ -11,5 +11,4 @@ import java.util.UUID;
 
 public interface Inbound_ProposalRepo extends JpaRepository<InBound_Proposal, UUID> {
 
-    InBound_Proposal findInBound_ProposalByPassportNumberAndPassportCountry(String passportNumber,String passportCountry);
 }

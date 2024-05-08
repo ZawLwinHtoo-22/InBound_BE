@@ -51,10 +51,4 @@ public class InBound_Proposal {
     private Agent agent;
 
 
-
-//    @ManyToOne
-//    private PremiumRate rate;
-//
-
-
 }
