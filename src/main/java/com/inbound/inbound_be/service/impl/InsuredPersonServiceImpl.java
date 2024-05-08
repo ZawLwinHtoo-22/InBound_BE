@@ -27,6 +27,9 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
     private CountryRepo countryRepo;
 
     @Autowired
+    private ChildRepo childRepo;
+
+    @Autowired
     private BeneficiaryRepo beneficiaryRepo;
 
     @Autowired

@@ -1,5 +1,6 @@
 package com.inbound.inbound_be.entity;
 
+import com.inbound.inbound_be.dto.AgentInfo;
 import com.inbound.inbound_be.dto.ChildRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -29,4 +30,5 @@ public class Child {
     @ManyToOne
     @JoinColumn(name = "i_person_fk")
     private InsuredPerson insuredPerson;
+
 }
