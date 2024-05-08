@@ -19,10 +19,10 @@ public class InsuredPersonRq {
     private String i_email;
     private String i_person_address;
     private String r_person_address;
-    private String i_passport_name;
+    private String passportNumber;
     private LocalDate i_passport_issue_date;
     private Boolean isChild;
-    private String i_passport_issue_country;
+    private String passportCountry;
     private UUID b_fk;
     private UUID r_country;
 

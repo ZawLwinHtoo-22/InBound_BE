@@ -23,10 +23,10 @@ public class AgentController {
     private AgentService service;
 
     @PostMapping
-    public ResponseEntity<HtooResponse<Agent>> addAgent(@RequestBody AgentRequest request){
-       Agent agent = service.addAgent(request);
+    public ResponseEntity<HtooResponse<Agent>> addAgent(@RequestBody Agent agent){
+       Agent saveAgent = service.addAgent(agent);
         HtooResponse<Agent> response =
-                new HtooResponse<>(agent, "Add Agent", HttpStatus.CREATED);
+                new HtooResponse<>(saveAgent, "Add Agent", HttpStatus.CREATED);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 

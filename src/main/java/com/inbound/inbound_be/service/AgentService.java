@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public interface AgentService {
 
-    Agent addAgent(AgentRequest agentRequest);
+    Agent addAgent(Agent agent);
     List<Agent> showAll();
     Agent showWithId(UUID a_id);
 

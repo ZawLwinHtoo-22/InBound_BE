@@ -1,9 +1,7 @@
 package com.inbound.inbound_be.controller;
 
-import com.inbound.inbound_be.dto.BeneficiaryRq;
-import com.inbound.inbound_be.dto.ChildRequest;
-import com.inbound.inbound_be.dto.Inbound_ProposalRequest;
-import com.inbound.inbound_be.dto.InsuredPersonRq;
+import com.inbound.inbound_be.domain.HtooResponse;
+import com.inbound.inbound_be.dto.*;
 import com.inbound.inbound_be.entity.*;
 import com.inbound.inbound_be.repo.AgentRepo;
 import com.inbound.inbound_be.repo.Inbound_ProposalRepo;
@@ -15,16 +13,14 @@ import com.inbound.inbound_be.service.InsuredPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("inbounds")
+@RequestMapping("/inbounds")
 public class Inbound_ProposalController {
     @Autowired
     private Inbound_ProposalService inboundProposalService;
@@ -49,7 +45,7 @@ public class Inbound_ProposalController {
 
             InsuredPersonRq insuredPersonRq=new InsuredPersonRq(request.getI_name(),request.getI_dob(),request.getI_gender(),
                     request.getI_phone(),request.getI_email(),request.getI_person_address(),request.getR_person_address(),
-                    request.getI_passport_name(),request.getI_passport_issue_date(),request.getIsChild(),request.getI_passport_issue_country(),beneficiary.getB_id(),request.getR_country_i());
+                    request.getPassportNumber(),request.getI_passport_issue_date(),request.getIsChild(),request.getPassportCountry(),beneficiary.getB_id(),request.getR_country_i());
             InsuredPerson insuredPerson=insuredPersonService.addInsuredPerson(insuredPersonRq);
         inBoundProposal.setInsuredPerson(insuredPerson);
         LocalDate now=LocalDate.now();
@@ -76,4 +72,21 @@ public class Inbound_ProposalController {
         inBoundProposal.setPro_date(LocalDate.now());
         return new ResponseEntity<>(inboundProposalRepo.save(inBoundProposal), HttpStatus.CREATED);
     }
+
+    @GetMapping
+    public ResponseEntity<List<InBound_Proposal>> showAll(){
+        List<InBound_Proposal> inBoundProposalList = inboundProposalService.showAll();
+        return new ResponseEntity<>(inBoundProposalList, HttpStatus.OK);
+    }
+
+    @GetMapping("/validate")
+    public ResponseEntity<List<InBound_Proposal>> validate(@RequestBody InBound_ValidationRq rq){
+        List<InBound_Proposal> inBoundProposal = inboundProposalService.validateRq(rq);
+        return new ResponseEntity<>(inBoundProposal, HttpStatus.OK);
+    }
+//@PostMapping("/validate")
+//public ResponseEntity<List<InBound_Proposal>> validate(@RequestParam String passportNumber,@RequestParam String passportCountry){
+//    List<InBound_Proposal> inBoundProposal = inboundProposalService.validateRq(passportNumber,passportCountry);
+//    return new ResponseEntity<>(inBoundProposal, HttpStatus.OK);
+//}
 }

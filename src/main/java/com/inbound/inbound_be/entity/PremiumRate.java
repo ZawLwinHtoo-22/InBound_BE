@@ -28,6 +28,4 @@ public class PremiumRate {
 //    private UUID c_id_fk;
 //    private UUID i_id_fk;
 
-
-
 }

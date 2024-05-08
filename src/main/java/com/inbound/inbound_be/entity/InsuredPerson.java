@@ -32,12 +32,10 @@ public class InsuredPerson {
     private String i_email;
     private String i_person_address;
     private String r_person_address;
-    private String i_passport_name;
     private LocalDate i_passport_issue_date;
+    private String passportNumber;
     private Boolean isChild;
-//    @Contract(isChild = true)
-//    private UUID ch_fk;
-    private String i_passport_country;
+    private String passportCountry;
 
 //    private UUID ch_fk;
 //    private UUID b_fk;

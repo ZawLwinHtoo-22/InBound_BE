@@ -17,4 +17,5 @@ public interface InsuredPersonService {
     InsuredPerson update(UUID i_id, InsuredPersonRq rq);
 
     void delete(UUID i_id);
+
 }
