@@ -5,6 +5,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 @Entity
 @Getter
@@ -30,12 +32,12 @@ public class InsuredPerson {
     private String i_email;
     private String i_person_address;
     private String r_person_address;
-    private String r_country;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
     private Boolean isChild;
 //    @Contract(isChild = true)
 //    private UUID ch_fk;
+    private String i_passport_country;
 
 //    private UUID ch_fk;
 //    private UUID b_fk;
@@ -44,5 +46,9 @@ public class InsuredPerson {
     @JoinColumn(name = "b_fk")
     private Beneficiary beneficiary;
 
+
+    @ManyToOne
+    @JoinColumn(name = "r_country")
+    private Country country;
 
 }

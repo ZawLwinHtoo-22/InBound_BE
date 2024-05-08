@@ -9,4 +9,6 @@ import java.util.UUID;
 public interface AgentRepo extends JpaRepository<Agent, UUID> {
     Optional<Agent> findAgentByLicenseNoAndPassword(Integer licenseNo, Integer password);
 
+    Agent findAgentByLicenseNo(Integer licenseNo);
+
 }

@@ -48,4 +48,9 @@ public class InBound_Proposal {
     @JoinColumn(name = "a_id_fk")
     private Agent agent;
 
+//    @ManyToOne
+//    private PremiumRate rate;
+//
+
+
 }

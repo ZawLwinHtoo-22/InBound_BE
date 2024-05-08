@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -25,4 +26,7 @@ public class Child {
     private String ch_gu_Name;
     private String ch_rs;
 
+    @ManyToOne
+    @JoinColumn(name = "i_person_fk")
+    private InsuredPerson insuredPerson;
 }

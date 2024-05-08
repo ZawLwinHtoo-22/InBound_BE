@@ -20,12 +20,11 @@ public class Inbound_ProposalRequest {
     private String i_email;
     private String i_person_address;
     private String r_person_address;
-    private String r_country;
+    private UUID r_country_i;
     private String i_passport_name;
     private LocalDate i_passport_issue_date;
     private Boolean isChild;
-    private UUID ch_fk;
-    private UUID agent_id;
+    private Integer licenseNo;
     private String ch_name;
     private LocalDate ch_dob;
     private String ch_gender;
@@ -38,5 +37,7 @@ public class Inbound_ProposalRequest {
     private String b_ph;
     private String b_email;
     private String b_address;
-    private String b_country;
+    private UUID r_country_b;
+    private String i_passport_issue_country;
+
 }
