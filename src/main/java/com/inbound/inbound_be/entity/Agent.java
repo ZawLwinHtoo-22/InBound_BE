@@ -1,6 +1,5 @@
 package com.inbound.inbound_be.entity;
 
-import com.inbound.inbound_be.dto.AgentRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +17,7 @@ public class Agent {
     private String a_name;
     private Integer licenseNo;
     private Integer password;
-    public static Agent of(AgentRequest request){
+    public static Agent of(Agent request){
         Agent agent = new Agent();
         agent.a_name = request.getA_name();
         agent.licenseNo = request.getLicenseNo();

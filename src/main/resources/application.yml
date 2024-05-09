@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=InBound;encrypt=true;trustServerCertificate=true;
+    url: jdbc:sqlserver://localhost:1433;databaseName=InBound_BE;encrypt=true;trustServerCertificate=true;
     username: sa
     password: root
   jpa:

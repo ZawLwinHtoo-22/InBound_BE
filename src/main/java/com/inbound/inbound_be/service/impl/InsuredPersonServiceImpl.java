@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -26,27 +27,20 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
     @Autowired
     private CountryRepo countryRepo;
 
+
     @Autowired
     private BeneficiaryRepo beneficiaryRepo;
 
     @Autowired
     private ModelMapper mapper;
 
-    @Autowired
-    private ChildRepo childRepo;
     @Override
     public InsuredPerson addInsuredPerson(InsuredPersonRq rq) {
         InsuredPerson insuredPerson = mapper.map(rq, InsuredPerson.class);
         Beneficiary beneficiary = beneficiaryRepo.findById(rq.getB_fk())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid BeneficiaryId "+ rq.getB_fk()));
         insuredPerson.setBeneficiary(beneficiary);
-//        if(rq.getIsChild() == true)t{
-//
-//            Child child = childRepo.findById();
-//        }
-//        InsuredPerson insuredPerson = insuredPersonRepo.findForeignKeyWhenBooleanColumnIsTrue()
-//                .orElseThrow().getInsuredPerson();
-//        i.setCh_fk(insuredPerson.getCh_fk());
+
 
 
         Country country = countryRepo.findById(rq.getR_country())
@@ -81,7 +75,7 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
                up.setI_gender(rq.getI_gender());
                up.setI_phone(rq.getI_phone());
                up.setI_passport_issue_date(rq.getI_passport_issue_date());
-               up.setI_passport_name(rq.getI_passport_name());
+               up.setPassportNumber(rq.getPassportNumber());
                up.setI_person_address(rq.getI_person_address());
                up.setR_person_address(rq.getR_person_address());
                up.setBeneficiary(beneficiary.get());
@@ -97,4 +91,6 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
             insuredPersonRepo.deleteById(i_id);
         }
     }
+
+
 }

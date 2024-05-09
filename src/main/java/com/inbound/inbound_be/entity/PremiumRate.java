@@ -25,9 +25,4 @@ public class PremiumRate {
     private Integer toAge;
     private Double pre_rate;
 
-//    private UUID c_id_fk;
-//    private UUID i_id_fk;
-
-
-
 }

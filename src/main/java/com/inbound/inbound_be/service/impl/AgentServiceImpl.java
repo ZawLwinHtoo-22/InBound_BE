@@ -1,6 +1,5 @@
 package com.inbound.inbound_be.service.impl;
 
-import com.inbound.inbound_be.dto.AgentInfo;
 import com.inbound.inbound_be.dto.AgentRequest;
 import com.inbound.inbound_be.dto.AgentValidateRq;
 import com.inbound.inbound_be.entity.Agent;
@@ -22,9 +21,25 @@ public class AgentServiceImpl implements AgentService {
     @Autowired
     private ModelMapper mapper;
     @Override
-    public Agent addAgent(AgentRequest request) {
-       Agent addAgent = Agent.of(request);
-       return mapper.map(repo.save(addAgent), Agent.class);
+    public Agent addAgent(Agent agent) {
+        try {
+            // Check if an agent with the same license number already exists
+            Agent existingAgent = repo.findByLicenseNo(agent.getLicenseNo());
+            if (existingAgent != null) {
+                // An agent with the same license number already exists, throw an exception or handle the error
+                throw new IllegalArgumentException("Agent with the same license number already exists");
+            }
+
+            // No agent with the same license number found, proceed to save the new agent
+            Agent addAgent = Agent.of(agent);
+            return mapper.map(repo.save(addAgent), Agent.class);
+        } catch (IllegalArgumentException ex) {
+            // Handle the exception, you can log the error or perform any necessary actions
+            ex.printStackTrace(); // Example: Print the stack trace
+            // Optionally, you can re-throw the exception to propagate it to the caller
+            throw ex;
+        }
+
 
     }
 

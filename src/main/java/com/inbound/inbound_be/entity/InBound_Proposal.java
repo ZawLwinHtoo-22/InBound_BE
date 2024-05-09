@@ -36,6 +36,8 @@ public class InBound_Proposal {
     private LocalDate pro_date;
     private Integer co_plan;
     private Double pre_rate;
+    private String passportNumber;
+    private String passportCountry;
 
 //    private UUID i_id_fk;
 //    private UUID a_id_fk;
@@ -47,10 +49,6 @@ public class InBound_Proposal {
     @ManyToOne
     @JoinColumn(name = "a_id_fk")
     private Agent agent;
-
-//    @ManyToOne
-//    private PremiumRate rate;
-//
 
 
 }

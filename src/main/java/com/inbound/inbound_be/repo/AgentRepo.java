@@ -11,4 +11,6 @@ public interface AgentRepo extends JpaRepository<Agent, UUID> {
 
     Agent findAgentByLicenseNo(Integer licenseNo);
 
+    Agent findByLicenseNo(Integer licenseNo);
+
 }

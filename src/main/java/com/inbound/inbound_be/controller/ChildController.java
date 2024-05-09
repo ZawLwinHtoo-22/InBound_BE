@@ -17,7 +17,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/child")
 @CrossOrigin
-@Transactional
+//@Transactional
 public class ChildController {
 
     @Autowired

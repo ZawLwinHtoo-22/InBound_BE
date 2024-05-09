@@ -1,5 +1,6 @@
 package com.inbound.inbound_be.controller;
 
+import com.inbound.inbound_be.domain.HtooResponse;
 import com.inbound.inbound_be.dto.BeneficiaryRq;
 import com.inbound.inbound_be.entity.Beneficiary;
 import com.inbound.inbound_be.service.BeneficiaryService;
@@ -21,26 +22,34 @@ public class BeneficiaryController {
     private BeneficiaryService service;
 
     @PostMapping
-    public ResponseEntity<Beneficiary> addBeneficiary(@RequestBody BeneficiaryRq rq){
+    public ResponseEntity<HtooResponse<Beneficiary>> addBeneficiary(@RequestBody BeneficiaryRq rq){
         Beneficiary beneficiary = service.addBeneficiary(rq);
-        return new ResponseEntity<>(beneficiary, HttpStatus.CREATED);
+        HtooResponse<Beneficiary> response =
+                new HtooResponse<>(beneficiary, "Success Add", HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
     @GetMapping
-    public ResponseEntity<List<Beneficiary>> showAll(){
+    public ResponseEntity<HtooResponse<List<Beneficiary>>> showAll(){
         List<Beneficiary> beneficiaries = service.showAll();
-        return new ResponseEntity<>(beneficiaries, HttpStatus.OK);
+        HtooResponse<List<Beneficiary>> response =
+                new HtooResponse<>(beneficiaries, "Beneficiaries List", HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/{b_id}")
-    public ResponseEntity<Beneficiary> showWithId(@PathVariable UUID b_id){
+    public ResponseEntity<HtooResponse<Beneficiary>> showWithId(@PathVariable UUID b_id){
         Beneficiary beneficiary = service.showWithId(b_id);
-        return new ResponseEntity<>(beneficiary, HttpStatus.OK);
+        HtooResponse<Beneficiary> response =
+                new HtooResponse<>(beneficiary, "Show With Beneficiary Id", HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping("/{b_id}")
-    public ResponseEntity<Beneficiary> updateBeneficiary(@PathVariable UUID b_id, @RequestBody BeneficiaryRq rq){
+    public ResponseEntity<HtooResponse<Beneficiary>> updateBeneficiary(@PathVariable UUID b_id, @RequestBody BeneficiaryRq rq){
         Beneficiary beneficiary = service.updateBeneficiary(b_id, rq);
-        return new ResponseEntity<>(beneficiary, HttpStatus.OK);
+        HtooResponse<Beneficiary> response =
+                new HtooResponse<>(beneficiary, "Success update", HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @DeleteMapping("/{b_id}")

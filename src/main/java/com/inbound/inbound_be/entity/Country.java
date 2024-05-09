@@ -18,8 +18,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Country {
 
-//    co - country
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID country_id;

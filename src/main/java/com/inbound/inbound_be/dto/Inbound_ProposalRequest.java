@@ -21,7 +21,7 @@ public class Inbound_ProposalRequest {
     private String i_person_address;
     private String r_person_address;
     private UUID r_country_i;
-    private String i_passport_name;
+    private String passportNumber;
     private LocalDate i_passport_issue_date;
     private Boolean isChild;
     private Integer licenseNo;
@@ -40,5 +40,6 @@ public class Inbound_ProposalRequest {
     private UUID r_country_b;
     private String i_passport_issue_country;
     private Double pre_rate;
+    private String passportCountry;
 
 }
