@@ -52,22 +52,12 @@ public class Inbound_ProposalController {
                     request.getI_passport_name(),request.getI_passport_issue_date(),request.getIsChild(),request.getI_passport_issue_country(),beneficiary.getB_id(),request.getR_country_i());
             InsuredPerson insuredPerson=insuredPersonService.addInsuredPerson(insuredPersonRq);
         inBoundProposal.setInsuredPerson(insuredPerson);
-        LocalDate now=LocalDate.now();
-        Integer currentYear=now.getYear();
         if(request.getIsChild() == true){
             ChildRequest childRequest=new ChildRequest(request.getCh_name(),request.getCh_dob(),request.getCh_gender(),
                     request.getCh_gu_Name(),request.getCh_rs(),insuredPerson.getI_person_id());
             Child child=childService.addChild(childRequest);
-            Integer birthYear=request.getCh_dob().getYear();
-            Integer age=currentYear-birthYear;
-            Double premium=premiumRateRepo.findPremiumRateByPolicyDaysAndFromAgeAndToAge(age,request.getCo_plan());
-            inBoundProposal.setPre_rate(premium);
         }else {
             System.out.println("No child");
-            Integer birthYear=request.getI_dob().getYear();
-            Integer age=currentYear-birthYear;
-            Double premium=premiumRateRepo.findPremiumRateByPolicyDaysAndFromAgeAndToAge(age,request.getCo_plan());
-            inBoundProposal.setPre_rate(premium);
         }
         Agent agent=agentRepo.findAgentByLicenseNo(request.getLicenseNo());
         inBoundProposal.setAgent(agent);
