@@ -41,6 +41,5 @@ public class Inbound_ProposalRequest {
     private String i_passport_issue_country;
     private Double pre_rate;
     private String passportCountry;
-    private Double pre_rate;
-
+    private Integer age;
 }
