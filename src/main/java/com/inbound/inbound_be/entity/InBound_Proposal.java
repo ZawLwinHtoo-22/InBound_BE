@@ -38,6 +38,7 @@ public class InBound_Proposal {
     private Double pre_rate;
     private String passportNumber;
     private String passportCountry;
+    private Integer age;
 
 //    private UUID i_id_fk;
 //    private UUID a_id_fk;

@@ -40,5 +40,6 @@ public class Inbound_ProposalRequest {
     private UUID r_country_b;
     private Double pre_rate;
     private String passportCountry;
+    private Integer age;
 
 }
