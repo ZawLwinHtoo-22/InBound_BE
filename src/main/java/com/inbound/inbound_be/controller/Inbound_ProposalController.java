@@ -21,6 +21,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/inbounds")
+@CrossOrigin
 public class Inbound_ProposalController {
     @Autowired
     private Inbound_ProposalService inboundProposalService;
@@ -69,7 +70,7 @@ public class Inbound_ProposalController {
         return new ResponseEntity<>(inBoundProposalList, HttpStatus.OK);
     }
 
-    @GetMapping("/validate")
+    @PostMapping("/validate")
     public ResponseEntity<List<InBound_Proposal>> validate(@RequestBody InBound_ValidationRq rq){
         List<InBound_Proposal> inBoundProposal = inboundProposalService.validateRq(rq);
         return new ResponseEntity<>(inBoundProposal, HttpStatus.OK);

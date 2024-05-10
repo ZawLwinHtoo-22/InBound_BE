@@ -15,7 +15,7 @@ public class PremiumRateController {
     @Autowired
     private PremiumRateService service;
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<PremiumResponse> getPremium(@RequestBody PremiumRequest request){
         PremiumResponse response=service.getByAge(request);
         return new ResponseEntity<>(response, HttpStatus.OK);

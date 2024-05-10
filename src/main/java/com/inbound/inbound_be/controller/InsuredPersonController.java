@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/insuredperson")
+@CrossOrigin
 public class InsuredPersonController {
 
     @Autowired
