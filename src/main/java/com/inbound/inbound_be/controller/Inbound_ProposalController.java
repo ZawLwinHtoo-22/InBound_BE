@@ -21,6 +21,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/inbounds")
+@CrossOrigin
 public class Inbound_ProposalController {
     @Autowired
     private Inbound_ProposalService inboundProposalService;
