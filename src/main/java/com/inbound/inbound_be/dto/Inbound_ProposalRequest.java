@@ -38,7 +38,6 @@ public class Inbound_ProposalRequest {
     private String b_email;
     private String b_address;
     private UUID r_country_b;
-    private String i_passport_issue_country;
     private Double pre_rate;
     private String passportCountry;
 
