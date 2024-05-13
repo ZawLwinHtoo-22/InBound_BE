@@ -39,6 +39,8 @@ public class InBound_Proposal {
     private String passportNumber;
     private String passportCountry;
     private Integer age;
+    private String ch_name;
+    private LocalDate ch_dob;
 
 //    private UUID i_id_fk;
 //    private UUID a_id_fk;
