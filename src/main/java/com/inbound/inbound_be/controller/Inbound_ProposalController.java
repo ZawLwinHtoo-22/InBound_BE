@@ -65,7 +65,7 @@ public class Inbound_ProposalController {
         inBoundProposal.setUpdatedDate(LocalDate.now());
         inBoundProposal.setVersion(1);
         return new ResponseEntity<>(inboundProposalRepo.save(inBoundProposal), HttpStatus.CREATED);
-    }gi
+    }
 
     @GetMapping
     public ResponseEntity<List<InBound_Proposal>> showAll(){
