@@ -3,10 +3,14 @@ GO
 
 INSERT INTO [dbo].[premium_rate]
            ([pre_id]
+           ,[created_date]
            ,[from_age]
            ,[policy_days]
            ,[pre_rate]
            ,[to_age])
+           ,[to_age]
+           ,[updated_date]
+           ,[version])
      VALUES
             (NEWID(), CAST(GETDATE() AS DATE), 1, 15, 50, 60, CAST(GETDATE() AS DATE), 1),
                       (NEWID(), CAST(GETDATE() AS DATE), 1, 30, 85, 60, CAST(GETDATE() AS DATE), 1),
