@@ -7,7 +7,6 @@ INSERT INTO [dbo].[premium_rate]
            ,[from_age]
            ,[policy_days]
            ,[pre_rate]
-           ,[to_age])
            ,[to_age]
            ,[updated_date]
            ,[version])
