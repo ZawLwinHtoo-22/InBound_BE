@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +47,9 @@ public class InsuredPersonServiceImpl implements InsuredPersonService {
         Country country = countryRepo.findById(rq.getR_country())
                 .orElseThrow(() -> new IllegalArgumentException("NO Country"));
         insuredPerson.setCountry(country);
-
+        insuredPerson.setCreatedDate(LocalDate.now());
+        insuredPerson.setUpdatedDate(LocalDate.now());
+        insuredPerson.setVersion(1);
         return insuredPersonRepo.save(insuredPerson);
     }
     @Override

@@ -13,4 +13,5 @@ public interface Inbound_ProposalService {
     List<InBound_Proposal> showAll();
     List<InBound_Proposal> validateRq(InBound_ValidationRq rq);
 
+
 }

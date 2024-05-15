@@ -61,6 +61,9 @@ public class Inbound_ProposalController {
         inBoundProposal.setP_st_date(LocalDate.now());
         inBoundProposal.setP_en_date(LocalDate.now().plusDays(request.getCo_plan()));
         inBoundProposal.setPro_date(LocalDate.now());
+        inBoundProposal.setCreatedDate(LocalDate.now());
+        inBoundProposal.setUpdatedDate(LocalDate.now());
+        inBoundProposal.setVersion(1);
         return new ResponseEntity<>(inboundProposalRepo.save(inBoundProposal), HttpStatus.CREATED);
     }
 

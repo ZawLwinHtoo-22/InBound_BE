@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,6 +28,9 @@ public class CountryServiceImpl implements CountryService {
         List<Country> countries = new ArrayList<>();
         for (CountryRequest request : requests) {
             Country country = mapper.map(request, Country.class);
+            country.setCreatedDate(LocalDate.now());
+            country.setUpdatedDate(LocalDate.now());
+            country.setVersion(1);
             countries.add(repo.save(country));
         }
         return countries;

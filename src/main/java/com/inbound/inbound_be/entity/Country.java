@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -23,6 +24,8 @@ public class Country {
     private UUID country_id;
     private String country_name;
     private String country_code;
-
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 
 }

@@ -3,50 +3,53 @@ GO
 
 INSERT INTO [dbo].[premium_rate]
            ([pre_id]
+           ,[created_date]
            ,[from_age]
            ,[policy_days]
            ,[pre_rate]
-           ,[to_age])
+           ,[to_age]
+           ,[updated_date]
+           ,[version])
      VALUES
-           (NEWID(), 1, 15, 50, 60),
-           (NEWID(), 1, 30, 85, 60),
-           (NEWID(), 1, 60, 150, 60),
-           (NEWID(), 1, 90, 220, 60),
-           (NEWID(), 1, 120, 300, 60),
-           (NEWID(), 1, 150, 350, 60),
-           (NEWID(), 1, 180, 420, 60),
-           (NEWID(), 1, 210, 495, 60),
-           (NEWID(), 1, 240, 575, 60),
-           (NEWID(), 1, 270, 655, 60),
-           (NEWID(), 1, 300, 735, 60),
-           (NEWID(), 1, 330, 810, 60),
-           (NEWID(), 1, 360, 845, 60),
-           (NEWID(), 61, 15, 75, 75),
-           (NEWID(), 61, 30, 130, 75),
-           (NEWID(), 61, 60, 225, 75),
-           (NEWID(), 61, 90, 330, 75),
-           (NEWID(), 61, 120, 450, 75),
-           (NEWID(), 61, 150, 525, 75),
-           (NEWID(), 61, 180, 630, 75),
-           (NEWID(), 61, 210, 740, 75),
-           (NEWID(), 61, 240, 860, 75),
-           (NEWID(), 61, 270, 980, 75),
-           (NEWID(), 61, 300, 1100, 75),
-           (NEWID(), 61, 330, 1210, 75),
-           (NEWID(), 61, 360, 1270, 75),
-           (NEWID(), 75, 15, 100, 120),
-           (NEWID(), 75, 30, 170, 120),
-           (NEWID(), 75, 60, 300, 120),
-           (NEWID(), 75, 90, 440, 120),
-           (NEWID(), 75, 120, 600, 120),
-           (NEWID(), 75, 150, 700, 120),
-           (NEWID(), 75, 180, 840, 120),
-           (NEWID(), 75, 210, 990, 120),
-           (NEWID(), 75, 240, 1150, 120),
-           (NEWID(), 75, 270, 1310, 120),
-           (NEWID(), 75, 300, 1470, 120),
-           (NEWID(), 75, 330, 1615, 120),
-           (NEWID(), 75, 360, 1695, 120)
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 15, 50, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 30, 85, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 60, 150, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 90, 220, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 120, 300, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 150, 350, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 180, 420, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 210, 495, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 240, 575, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 270, 655, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 300, 735, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 330, 810, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 1, 360, 845, 60, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 15, 75, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 30, 130, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 60, 225, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 90, 330, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 120, 450, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 150, 525, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 180, 630, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 210, 740, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 240, 860, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 270, 980, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 300, 1100, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 330, 1210, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 61, 360, 1270, 75, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 15, 100, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 30, 170, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 60, 300, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 90, 440, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE),75, 120, 600, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 150, 700, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 180, 840, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 210, 990, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 240, 1150, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 270, 1310, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 300, 1470, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 330, 1615, 120, CAST(GETDATE() AS DATE), 1),
+           (NEWID(), CAST(GETDATE() AS DATE), 75, 360, 1695, 120, CAST(GETDATE() AS DATE), 1)
 GO
 
 

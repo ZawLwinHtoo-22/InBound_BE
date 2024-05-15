@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -32,6 +33,9 @@ public class AgentServiceImpl implements AgentService {
 
             // No agent with the same license number found, proceed to save the new agent
             Agent addAgent = Agent.of(agent);
+            addAgent.setCreatedDate(LocalDate.now());
+            addAgent.setUpdatedDate(LocalDate.now());
+            addAgent.setVersion(1);
             return mapper.map(repo.save(addAgent), Agent.class);
         } catch (IllegalArgumentException ex) {
             // Handle the exception, you can log the error or perform any necessary actions

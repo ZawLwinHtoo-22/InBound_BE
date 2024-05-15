@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -21,4 +22,7 @@ public class Currency {
     private UUID cu_id;
     private String currency;
     private String description;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 }

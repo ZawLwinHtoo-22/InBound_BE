@@ -41,6 +41,9 @@ public class InBound_Proposal {
     private Integer age;
     private String ch_name;
     private LocalDate ch_dob;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 //    private UUID i_id_fk;
 //    private UUID a_id_fk;
 
