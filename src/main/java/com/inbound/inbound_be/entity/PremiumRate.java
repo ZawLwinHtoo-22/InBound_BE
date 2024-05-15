@@ -24,5 +24,8 @@ public class PremiumRate {
     private Integer fromAge;
     private Integer toAge;
     private Double pre_rate;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 
 }

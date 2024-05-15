@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -31,6 +32,9 @@ public class ChildServiceImpl implements ChildService {
         Child child = mapper.map(request, Child.class);
         Optional<InsuredPerson> insuredPerson=repo.findById(request.getI_person_fk());
         child.setInsuredPerson(insuredPerson.get());
+        child.setCreatedDate(LocalDate.now());
+        child.setUpdatedDate(LocalDate.now());
+        child.setVersion(1);
         return childRepo.save(child);
     }
 

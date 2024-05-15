@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -17,6 +18,9 @@ public class Agent {
     private String a_name;
     private Integer licenseNo;
     private Integer password;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
     public static Agent of(Agent request){
         Agent agent = new Agent();
         agent.a_name = request.getA_name();

@@ -36,6 +36,9 @@ public class InsuredPerson {
     private String passportNumber;
     private Boolean isChild;
     private String passportCountry;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 
 //    private UUID ch_fk;
 //    private UUID b_fk;

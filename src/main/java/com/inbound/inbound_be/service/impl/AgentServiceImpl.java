@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -26,17 +27,17 @@ public class AgentServiceImpl implements AgentService {
             // Check if an agent with the same license number already exists
             Agent existingAgent = repo.findByLicenseNo(agent.getLicenseNo());
             if (existingAgent != null) {
-                // An agent with the same license number already exists, throw an exception or handle the error
                 throw new IllegalArgumentException("Agent with the same license number already exists");
             }
 
             // No agent with the same license number found, proceed to save the new agent
             Agent addAgent = Agent.of(agent);
+            addAgent.setCreatedDate(LocalDate.now());
+            addAgent.setUpdatedDate(LocalDate.now());
+            addAgent.setVersion(1);
             return mapper.map(repo.save(addAgent), Agent.class);
         } catch (IllegalArgumentException ex) {
-            // Handle the exception, you can log the error or perform any necessary actions
-            ex.printStackTrace(); // Example: Print the stack trace
-            // Optionally, you can re-throw the exception to propagate it to the caller
+            ex.printStackTrace();
             throw ex;
         }
 

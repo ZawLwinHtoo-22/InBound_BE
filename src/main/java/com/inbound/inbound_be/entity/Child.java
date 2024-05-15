@@ -22,6 +22,9 @@ public class Child {
     private String ch_gender;
     private String ch_gu_Name;
     private String ch_rs;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 
     @ManyToOne
     @JoinColumn(name = "i_person_fk")

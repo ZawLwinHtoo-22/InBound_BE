@@ -26,6 +26,9 @@ public class Beneficiary {
     private String b_ph;
     private String b_email;
     private String b_address;
+    private LocalDate createdDate;
+    private LocalDate updatedDate;
+    private Integer version;
 
     @ManyToOne
     @JoinColumn(name = "r_country")
